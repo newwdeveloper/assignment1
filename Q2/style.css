@@ -1,0 +1,43 @@
+.container{
+    margin:10px;
+    display: flex;
+    width:100%;
+    height:100vh;
+    gap:5px;
+    object-fit: cover;
+    
+}
+
+.container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the full container */
+    flex-grow: 1; /* Allows each image to take up an equal amount of space */
+}
+
+@media screen and (max-width:800px) and (min-width:501px){
+    .container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows:1fr 1fr ;
+        grid-template-areas: 
+        "one two"
+        "three .";
+    }
+    .one{
+        grid-area: one;
+    }
+    .two{
+        grid-area: two;
+    }
+    .three{
+        grid-area: three;
+    }
+}
+
+@media screen and (max-width:500px){
+    .container{
+        display: flex;
+        flex-direction: column;
+    }
+}
